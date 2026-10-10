@@ -2,7 +2,7 @@
     display: grid;
     min-height: 260px;
     place-items: center;
-    .fullPage {
+    &.fullPage {
         min-height: 65vh;
     }
     .spinner {
