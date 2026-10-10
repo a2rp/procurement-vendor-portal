@@ -25,23 +25,40 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
     min-width: 320px;
     min-height: 100%;
     scroll-behavior: smooth;
-    scrollbar-gutter: stable;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 body {
+    width: 100%;
     min-width: 320px;
     min-height: 100vh;
-    margin: 0;
     background: var(--color-canvas);
     color: var(--color-ink);
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+#root {
+    min-height: 100vh;
 }
 
 button,
@@ -59,6 +76,12 @@ select {
 
 button {
     color: inherit;
+    cursor: pointer;
+}
+
+button:disabled,
+select:disabled {
+    cursor: not-allowed;
 }
 
 a {
@@ -66,13 +89,32 @@ a {
     text-decoration: none;
 }
 
-img,
-svg {
-    display: block;
+ul,
+ol {
+    list-style: none;
 }
 
-img {
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
     max-width: 100%;
+}
+
+img,
+video {
+    height: auto;
+}
+
+[hidden] {
+    display: none !important;
 }
 
 :focus-visible {
