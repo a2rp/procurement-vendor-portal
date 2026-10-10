@@ -2,26 +2,28 @@
     display: grid;
     min-height: 260px;
     place-items: center;
+    .fullPage {
+        min-height: 65vh;
+    }
+    .spinner {
+        width: 42px;
+        height: 42px;
+        border: 3px solid #dce7df;
+        border-top-color: var(--color-green);
+        border-right-color: #9abc67;
+        border-radius: 50%;
+        animation: spin 760ms linear infinite;
+        @media (prefers-reduced-motion: reduce) {
+            animation-duration: 2400ms;
+        }
+    }
+    @media (max-width: 640px) {
+        min-height: 220px;
+    }
 }
 
-.fullPage { min-height: 65vh; }
-
-.spinner {
-    width: 42px;
-    height: 42px;
-    border: 3px solid #dce7df;
-    border-top-color: var(--color-green);
-    border-right-color: #9abc67;
-    border-radius: 50%;
-    animation: spin 760ms linear infinite;
-}
-
-@keyframes spin { to { rotate: 360deg; } }
-
-@media (max-width: 640px) {
-    .loading { min-height: 220px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .spinner { animation-duration: 2400ms; }
+@keyframes spin {
+    to {
+        rotate: 360deg;
+    }
 }
