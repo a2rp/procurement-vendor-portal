@@ -1,0 +1,53 @@
+.footer {
+    padding: 34px 0 28px;
+    border-top: 1px solid var(--color-line);
+    background: #edf2ed;
+}
+
+.inner {
+    display: flex;
+    width: min(100% - 64px, 1420px);
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-inline: auto;
+}
+
+.identity { display: grid; flex: 0 0 auto; gap: 13px; }
+.brand { display: inline-flex; width: fit-content; align-items: center; gap: 9px; color: var(--color-green-dark); font-size: 18px; font-weight: 800; letter-spacing: -0.055em; text-decoration: none; }
+.brand img { width: 28px; height: 28px; border-radius: 8px; object-fit: cover; }
+.brandDot { color: #89a94f; }
+.identity p { color: var(--color-muted); font-size: 13px; }
+.identity p a { padding-inline: 4px; color: var(--color-ink); text-decoration: none; }
+.identity p a:hover { color: var(--color-green); }
+
+.links { display: flex; max-width: 760px; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 9px 13px; }
+.links > a {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 11px;
+    color: #697a72;
+    text-decoration: none;
+    transition: border-color 160ms ease, box-shadow 160ms ease, color 160ms ease;
+}
+
+.links > a:hover { border-color: #d6e0d8; color: var(--color-green-dark); box-shadow: 0 5px 14px rgb(23 50 39 / 10%); }
+.links > a svg { width: 19px; height: 19px; flex: 0 0 auto; }
+.tooltip { z-index: 30; border: 1px solid rgb(255 255 255 / 14%); border-radius: 10px; background: #171c19; box-shadow: 0 12px 30px rgb(14 22 18 / 28%); font-family: inherit; }
+.tooltipContent { display: grid; width: max-content; min-width: 140px; margin: -8px -16px; padding: 8px 12px; gap: 2px; }
+.tooltipContent strong { color: #fff; font-size: 13px; font-weight: 650; line-height: 1.3; }
+.tooltipContent span { color: rgb(255 255 255 / 72%); font-size: 13px; line-height: 1.3; }
+.tooltipArrow { background: #171c19; }
+
+@media (max-width: 760px) {
+    .inner { width: min(100% - 32px, 1420px); align-items: flex-start; flex-direction: column; gap: 24px; }
+    .links { justify-content: flex-start; gap: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .links > a { transition: none; }
+}
