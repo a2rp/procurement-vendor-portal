@@ -44,7 +44,7 @@ const InvoicesPage = () => {
     const routeIntent = location.state?.createInvoice ? location.state : null;
     const routeInvoice = routeIntent?.orderId ? invoices.find((invoice) => invoice.orderId === routeIntent.orderId) : null;
     const activeInvoice = editingInvoice || routeInvoice;
-    const editorOpen = createOpen || Boolean(routeIntent);
+    const editorOpen = createOpen || Boolean(editingInvoice) || Boolean(routeIntent);
     const initialOrder = routeIntent?.orderId ? orders.find((order) => order.id === routeIntent.orderId) : null;
     const alreadyInvoicedOrderIds = invoices.map((invoice) => invoice.orderId);
     const eligibleOrders = orders.filter((order) => ["Dispatched", "Delivered"].includes(order.status) && !alreadyInvoicedOrderIds.includes(order.id));
