@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { FiArrowDownUp, FiArrowUpRight, FiCalendar, FiDownload, FiEye, FiFileText, FiFilter, FiPackage, FiPlus, FiSend, FiXCircle } from "react-icons/fi";
+import { FiArrowUpRight, FiCalendar, FiDownload, FiEye, FiFileText, FiFilter, FiPackage, FiPlus, FiRepeat, FiSend, FiXCircle } from "react-icons/fi";
 import Dialog from "../../components/dialog/index.jsx";
 import { usePortal } from "../../context/usePortal.js";
 import { downloadCsv, formatCurrency, formatDate, formatDueLabel, getDaysUntil } from "../../utils/formatters.js";
@@ -102,7 +102,7 @@ const RfqsPage = () => {
                     <div className={styles.filters}>
                         <label><FiFilter aria-hidden="true" /><span className={styles.srOnly}>Filter by status</span><select onChange={(event) => setStatusFilter(event.target.value)} value={statusFilter}><option>All requests</option>{["Open", "Quoted", "Awarded", "Declined"].map((status) => <option key={status}>{status}</option>)}</select></label>
                         <label><FiPackage aria-hidden="true" /><span className={styles.srOnly}>Filter by category</span><select onChange={(event) => setCategoryFilter(event.target.value)} value={categoryFilter}><option>All categories</option>{categories.map((category) => <option key={category}>{category}</option>)}</select></label>
-                        <label><FiArrowDownUp aria-hidden="true" /><span className={styles.srOnly}>Sort requests</span><select onChange={(event) => setSortBy(event.target.value)} value={sortBy}><option>Closing soon</option><option>Buyer</option><option>Newest</option></select></label>
+                        <label><FiRepeat aria-hidden="true" /><span className={styles.srOnly}>Sort requests</span><select onChange={(event) => setSortBy(event.target.value)} value={sortBy}><option>Closing soon</option><option>Buyer</option><option>Newest</option></select></label>
                     </div>
                 </div>
 
