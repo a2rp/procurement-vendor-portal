@@ -158,7 +158,7 @@ const RfqsPage = () => {
                 size="medium"
                 title={quoteRfq?.quote ? "Revise your quote" : "Prepare a quote"}
             >
-                <form className={styles.quoteForm} id="quote-form" onSubmit={saveQuote}>
+                <form className={styles.quoteForm} id="quote-form" noValidate onSubmit={saveQuote}>
                     <label>Unit price <span>USD</span><div className={styles.inputWithPrefix}><span>$</span><input min="0.01" onChange={(event) => setQuote((current) => ({ ...current, unitPrice: event.target.value }))} placeholder="0.00" required step="0.01" type="number" value={quote.unitPrice} /></div></label>
                     <label>Lead time <span>calendar days</span><div className={styles.inputWithSuffix}><input min="1" onChange={(event) => setQuote((current) => ({ ...current, leadDays: event.target.value }))} placeholder="e.g. 12" required type="number" value={quote.leadDays} /><span>days</span></div></label>
                     <label>Quote valid through<input min={today} onChange={(event) => setQuote((current) => ({ ...current, validTo: event.target.value }))} required type="date" value={quote.validTo} /></label>
