@@ -1,0 +1,162 @@
+.page {
+    display: grid;
+    min-height: 68vh;
+    place-items: center;
+    padding: 35px 20px 55px;
+    .paper {
+        display: grid;
+        width: min(100%, 590px);
+        justify-items: center;
+        padding: 35px 32px;
+        border: 1px solid var(--color-line);
+        border-radius: 22px;
+        background: #fff;
+        box-shadow: 0 18px 48px rgb(28 56 45 / 7%);
+        text-align: center;
+        @media (max-width: 540px) {
+            padding: 28px 19px;
+        }
+    }
+    .illustration {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        color: #91a68e;
+    }
+    .illustration span {
+        color: var(--color-green);
+        font-size: 76px;
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.07em;
+        @media (max-width: 540px) {
+            font-size: 61px;
+        }
+    }
+    .illustration svg {
+        width: 55px;
+        height: 55px;
+        color: #8eaa56;
+        @media (max-width: 540px) {
+            width: 44px;
+            height: 44px;
+        }
+    }
+    .label {
+        margin-top: 25px;
+        color: #798a80;
+        font-size: 13px;
+        font-weight: 750;
+        letter-spacing: .09em;
+    }
+    .paper h1 {
+        margin-top: 7px;
+        font-size: clamp(25px, 4vw, 34px);
+        letter-spacing: -0.045em;
+    }
+    .description {
+        max-width: 410px;
+        margin-top: 8px;
+        color: var(--color-muted);
+        font-size: 15px;
+        @media (max-width: 540px) {
+            font-size: 14px;
+        }
+    }
+    .actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 9px;
+        margin-top: 23px;
+        @media (max-width: 540px) {
+            align-items: stretch;
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+    .primary {
+        display: inline-flex;
+        min-height: 45px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 0 15px;
+        border: 1px solid var(--color-green);
+        border-radius: 11px;
+        background: var(--color-green);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+        @media (prefers-reduced-motion: reduce) {
+            transition: none;
+        }
+    }
+    .secondary {
+        display: inline-flex;
+        min-height: 45px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 0 15px;
+        border: 1px solid var(--color-green);
+        border-radius: 11px;
+        background: var(--color-green);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+        @media (prefers-reduced-motion: reduce) {
+            transition: none;
+        }
+    }
+    .primary:hover {
+        border-color: var(--color-green-dark);
+        background: var(--color-green-dark);
+        box-shadow: 0 6px 17px rgb(29 96 79 / 17%);
+    }
+    .secondary {
+        border-color: var(--color-line);
+        background: #fff;
+        color: var(--color-ink);
+    }
+    .secondary:hover {
+        border-color: #9cad9f;
+        box-shadow: 0 5px 15px rgb(28 56 45 / 8%);
+    }
+    .primary svg {
+        font-size: 16px;
+    }
+    .secondary svg {
+        font-size: 16px;
+    }
+    .backButton {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        gap: 7px;
+        margin-top: 13px;
+        padding: 0 10px;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        background: transparent;
+        color: #5d7166;
+        font-size: 14px;
+        transition: border-color 160ms ease, box-shadow 160ms ease, color 160ms ease;
+        @media (prefers-reduced-motion: reduce) {
+            transition: none;
+        }
+    }
+    .backButton:hover {
+        border-color: var(--color-line);
+        color: var(--color-green);
+        box-shadow: 0 4px 12px rgb(28 56 45 / 7%);
+    }
+    @media (max-width: 540px) {
+        min-height: 62vh;
+        padding: 25px 12px 38px;
+    }
+}
