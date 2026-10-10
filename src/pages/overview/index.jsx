@@ -1,12 +1,10 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { FiArrowRight, FiArrowUpRight, FiCalendar, FiCheckCircle, FiClock, FiFileText, FiPackage, FiTruck } from "react-icons/fi";
-import { usePortal } from "../../context/usePortal.js";
 import { formatCurrency, formatDate, formatDueLabel, formatLongDate, getDaysUntil } from "../../utils/formatters.js";
 import styles from "./styles.module.css";
 
-const OverviewPage = () => {
-    const { rfqs, orders, invoices, company, globalSearch } = usePortal();
+const OverviewPage = ({ rfqs, orders, invoices, company, globalSearch }) => {
     const query = globalSearch.trim().toLowerCase();
     const currentDate = new Date().toISOString().slice(0, 10);
 

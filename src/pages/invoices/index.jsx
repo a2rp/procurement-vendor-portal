@@ -2,7 +2,6 @@ import { useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FiArrowUpRight, FiCheckCircle, FiClipboard, FiDownload, FiEye, FiFilePlus, FiFilter, FiPlus, FiRepeat, FiTrash2 } from "react-icons/fi";
 import Dialog from "../../components/dialog/index.jsx";
-import { usePortal } from "../../context/usePortal.js";
 import { downloadCsv, formatCurrency, formatDate } from "../../utils/formatters.js";
 import styles from "./styles.module.css";
 
@@ -20,8 +19,7 @@ const invoiceForm = (invoice) => ({
     note: invoice?.note || "",
 });
 
-const InvoicesPage = () => {
-    const { invoices, orders, globalSearch, addInvoice, updateInvoice, removeInvoice, requestConfirmation, addToast } = usePortal();
+const InvoicesPage = ({ invoices, orders, globalSearch, addInvoice, updateInvoice, removeInvoice, requestConfirmation, addToast }) => {
     const [statusFilter, setStatusFilter] = useState("All invoices");
     const [sortBy, setSortBy] = useState("Newest");
     const [selectedInvoice, setSelectedInvoice] = useState(null);

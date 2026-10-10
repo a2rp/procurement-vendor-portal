@@ -1,14 +1,12 @@
 import { useMemo, useState } from "react";
 import { FiArrowUpRight, FiCalendar, FiDownload, FiEye, FiFileText, FiFilter, FiPackage, FiPlus, FiRepeat, FiSend, FiXCircle } from "react-icons/fi";
 import Dialog from "../../components/dialog/index.jsx";
-import { usePortal } from "../../context/usePortal.js";
 import { downloadCsv, formatCurrency, formatDate, formatDueLabel, getDaysUntil } from "../../utils/formatters.js";
 import styles from "./styles.module.css";
 
 const today = new Date().toISOString().slice(0, 10);
 
-const RfqsPage = () => {
-    const { rfqs, globalSearch, submitQuote, withdrawQuote, requestConfirmation, addToast } = usePortal();
+const RfqsPage = ({ rfqs, globalSearch, submitQuote, withdrawQuote, requestConfirmation, addToast }) => {
     const [statusFilter, setStatusFilter] = useState("All requests");
     const [categoryFilter, setCategoryFilter] = useState("All categories");
     const [sortBy, setSortBy] = useState("Closing soon");

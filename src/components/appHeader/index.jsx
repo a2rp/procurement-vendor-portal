@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FiArrowUpRight, FiBriefcase, FiFileText, FiGrid, FiMenu, FiPackage, FiSearch, FiTruck, FiX } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa6";
-import { usePortal } from "../../context/usePortal.js";
 import styles from "./styles.module.css";
 
 const navigation = [
@@ -13,14 +12,12 @@ const navigation = [
     { to: "/company", label: "Company", icon: FiTruck },
 ];
 
-const AppHeader = () => {
+const AppHeader = ({ globalSearch, setGlobalSearch, addToast }) => {
     const [isHidden, setIsHidden] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const searchRef = useRef(null);
     const previousScroll = useRef(0);
     const navigate = useNavigate();
-    const { globalSearch, setGlobalSearch, addToast } = usePortal();
-
     useEffect(() => {
         const handleScroll = () => {
             const current = window.scrollY;

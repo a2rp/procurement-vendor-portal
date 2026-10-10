@@ -2,14 +2,12 @@ import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiArrowRight, FiBox, FiCalendar, FiCheck, FiCheckCircle, FiChevronDown, FiClipboard, FiPackage, FiTruck } from "react-icons/fi";
 import Dialog from "../../components/dialog/index.jsx";
-import { usePortal } from "../../context/usePortal.js";
 import { formatCurrency, formatDate } from "../../utils/formatters.js";
 import styles from "./styles.module.css";
 
 const stages = ["Awaiting acceptance", "In production", "Ready to ship", "Dispatched", "Delivered"];
 
-const OrdersPage = () => {
-    const { orders, invoices, globalSearch, updateOrder, addToast } = usePortal();
+const OrdersPage = ({ orders, invoices, globalSearch, updateOrder, addToast }) => {
     const [statusFilter, setStatusFilter] = useState("All orders");
     const [selectedId, setSelectedId] = useState(orders[0]?.id || "");
     const [dispatchOrder, setDispatchOrder] = useState(null);

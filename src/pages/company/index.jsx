@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
 import { FiArrowUpRight, FiBriefcase, FiCheck, FiCheckCircle, FiEdit3, FiExternalLink, FiFilePlus, FiGlobe, FiMail, FiMapPin, FiPhone, FiPlus, FiShield, FiTrash2 } from "react-icons/fi";
 import Dialog from "../../components/dialog/index.jsx";
-import { usePortal } from "../../context/usePortal.js";
 import { downloadCsv, formatDate, getDaysUntil } from "../../utils/formatters.js";
 import styles from "./styles.module.css";
 
@@ -9,8 +8,7 @@ const today = new Date().toISOString().slice(0, 10);
 const emptyDocument = () => ({ name: "", status: "In review", expires: "", owner: "" });
 const isSampleDomain = (value = "") => /\.example$/i.test(value.replace(/^https?:\/\//, ""));
 
-const CompanyPage = () => {
-    const { company, compliance, globalSearch, updateCompany, updateCompliance, addCompliance, removeCompliance, requestConfirmation, addToast } = usePortal();
+const CompanyPage = ({ company, compliance, globalSearch, updateCompany, updateCompliance, addCompliance, removeCompliance, requestConfirmation, addToast }) => {
     const [companyOpen, setCompanyOpen] = useState(false);
     const [companyForm, setCompanyForm] = useState({ ...company, categories: company.categories.join(", ") });
     const [documentEditor, setDocumentEditor] = useState(null);
