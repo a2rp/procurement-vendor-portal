@@ -43,8 +43,10 @@ const CompanyPage = () => {
     const saveCompany = (event) => {
         event.preventDefault();
         if (companyForm.name.trim().length < 2) return setFormError("Enter your registered business name.");
+        if (companyForm.contact.trim().length < 2) return setFormError("Enter the name of your primary contact.");
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(companyForm.email.trim())) return setFormError("Enter a valid contact email address.");
         if (companyForm.phone.trim().length < 7) return setFormError("Enter a phone number with at least seven characters.");
+        if (companyForm.address.trim().length < 8) return setFormError("Enter your registered business address.");
         updateCompany({ ...companyForm, name: companyForm.name.trim(), contact: companyForm.contact.trim(), email: companyForm.email.trim(), phone: companyForm.phone.trim(), address: companyForm.address.trim(), website: companyForm.website.trim(), tagline: companyForm.tagline.trim(), about: companyForm.about.trim(), categories: companyForm.categories.split(",").map((item) => item.trim()).filter(Boolean) });
         setCompanyOpen(false);
         addToast("Company profile updated.", "success");
