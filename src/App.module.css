@@ -6,14 +6,12 @@
         min-width: 0;
         flex: 1 0 auto;
         padding-top: 88px;
-    }
-    @media (max-width: 980px) {
-        .main {
+
+        @media (max-width: 980px) {
             padding-top: 76px;
         }
-    }
-    @media (max-width: 650px) {
-        .main {
+
+        @media (max-width: 650px) {
             padding-top: 72px;
         }
     }
