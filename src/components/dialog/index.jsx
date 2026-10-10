@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 
 const focusableSelector = "button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex='-1'])";
 
-const Dialog = ({ isOpen, onClose, title, description, children, footer, size = "medium", labelId = "portal-dialog-title" }) => {
+const Dialog = ({ isOpen, onClose, title, description, children, footer, size = "medium", labelId = "portal-dialog-title", initialFocusRef }) => {
     const dialogRef = useRef(null);
     const previouslyFocused = useRef(null);
 
@@ -13,7 +13,7 @@ const Dialog = ({ isOpen, onClose, title, description, children, footer, size = 
         if (!isOpen) return undefined;
         previouslyFocused.current = document.activeElement;
         const firstFocusable = dialogRef.current?.querySelector(focusableSelector);
-        (firstFocusable || dialogRef.current)?.focus();
+        (initialFocusRef?.current || firstFocusable || dialogRef.current)?.focus();
 
         const handleKeyDown = (event) => {
             if (event.key === "Escape") {
@@ -43,7 +43,7 @@ const Dialog = ({ isOpen, onClose, title, description, children, footer, size = 
             document.removeEventListener("keydown", handleKeyDown);
             previouslyFocused.current?.focus?.();
         };
-    }, [isOpen, onClose]);
+    }, [isOpen, onClose, initialFocusRef]);
 
     if (!isOpen) return null;
 
