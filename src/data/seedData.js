@@ -161,6 +161,20 @@ export const seedOrders = [
         carrier: "UPS",
         lines: [{ name: "Double-wall recycled carton", quantity: 900, unitPrice: 3.5 }],
     },
+    {
+        id: "PO-60342",
+        title: "Calibration kit foam inserts",
+        buyer: "Fieldstone Instruments",
+        orderDate: "2026-09-25",
+        dueDate: "2026-10-07",
+        amount: 2340,
+        quantity: 180,
+        status: "Delivered",
+        reference: "FI-PO-1984",
+        tracking: "UPS-4860-3175",
+        carrier: "UPS",
+        lines: [{ name: "Precision-cut calibration case insert", quantity: 180, unitPrice: 13 }],
+    },
 ];
 
 export const seedInvoices = [
