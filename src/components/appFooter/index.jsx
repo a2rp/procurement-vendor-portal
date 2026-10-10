@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
 import { FaCoffee, FaCodepen, FaFacebookF, FaGithub, FaLinkedinIn, FaPatreon, FaYoutube } from "react-icons/fa";
 import { FiGlobe, FiLifeBuoy, FiMail } from "react-icons/fi";
 import { Tooltip } from "react-tooltip";
 import styles from "./styles.module.css";
 
 const links = [
+    { label: "Source code", detail: "github.com/a2rp/procurement-vendor-portal", icon: <FaGithub aria-hidden="true" />, href: "https://github.com/a2rp/procurement-vendor-portal" },
     { label: "Portfolio", detail: "ashishranjan.net", icon: <FiGlobe aria-hidden="true" />, href: "https://www.ashishranjan.net" },
     { label: "GitHub", detail: "github.com/a2rp", icon: <FaGithub aria-hidden="true" />, href: "https://github.com/a2rp" },
     { label: "CodePen", detail: "codepen.io/ash1198", icon: <FaCodepen aria-hidden="true" />, href: "https://codepen.io/ash1198" },
@@ -21,10 +21,10 @@ const AppFooter = () => (
     <footer className={styles.footer}>
         <div className={styles.inner}>
             <div className={styles.identity}>
-                <Link aria-label="Sourcelane overview" className={styles.brand} to="/">
+                <a aria-label="Visit Ashish Ranjan's portfolio" className={styles.brand} href="https://www.ashishranjan.net" rel="noreferrer" target="_blank">
                     <img alt="" src={`${import.meta.env.BASE_URL}logo.png`} />
                     <span>sourcelane<span className={styles.brandDot}>.</span></span>
-                </Link>
+                </a>
                 <p>© {new Date().getFullYear()} <a href="https://github.com/a2rp" rel="noreferrer" target="_blank">Ashish Ranjan</a>. All rights reserved.</p>
             </div>
             <nav aria-label="Footer links" className={styles.links}>
