@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { FiArrowUpRight, FiBuilding, FiCheck, FiCheckCircle, FiEdit3, FiExternalLink, FiFilePlus, FiGlobe, FiMail, FiMapPin, FiPhone, FiPlus, FiShield, FiTrash2 } from "react-icons/fi";
+import { FiArrowUpRight, FiBriefcase, FiCheck, FiCheckCircle, FiEdit3, FiExternalLink, FiFilePlus, FiGlobe, FiMail, FiMapPin, FiPhone, FiPlus, FiShield, FiTrash2 } from "react-icons/fi";
 import Dialog from "../../components/dialog/index.jsx";
 import { usePortal } from "../../context/usePortal.js";
 import { downloadCsv, formatDate, getDaysUntil } from "../../utils/formatters.js";
@@ -113,13 +113,13 @@ const CompanyPage = () => {
 
             <div className={styles.contentGrid}>
                 <section aria-label="Company information" className={styles.companyCard}>
-                    <div className={styles.companyCover}><span className={styles.coverMark}><FiBuilding aria-hidden="true" /></span><span className={styles.vendorId}>{company.vendorId}</span><span className={styles.coverMesh} aria-hidden="true" /></div>
+                    <div className={styles.companyCover}><span className={styles.coverMark}><FiBriefcase aria-hidden="true" /></span><span className={styles.vendorId}>{company.vendorId}</span><span className={styles.coverMesh} aria-hidden="true" /></div>
                     <div className={styles.companyBody}>
                         <div className={styles.companyTitle}><div><h2>{company.name}</h2><p>{company.tagline}</p></div><button aria-label="Edit company profile" className={styles.editIcon} onClick={openCompanyEditor} type="button"><FiEdit3 aria-hidden="true" /></button></div>
                         <p className={styles.about}>{company.about}</p>
                         <div className={styles.categoryList}>{company.categories.map((category) => <span key={category}>{category}</span>)}</div>
                         <div className={styles.contactList}>
-                            <div><FiBuilding aria-hidden="true" /><span><strong>{company.contact}</strong><small>Primary contact</small></span></div>
+                            <div><FiBriefcase aria-hidden="true" /><span><strong>{company.contact}</strong><small>Primary contact</small></span></div>
                             {isSampleDomain(company.email) ? <div><FiMail aria-hidden="true" /><span><strong>{company.email}</strong><small>Sample email address</small></span></div> : <a href={`mailto:${company.email}`}><FiMail aria-hidden="true" /><span><strong>{company.email}</strong><small>Email contact</small></span><FiArrowUpRight aria-hidden="true" className={styles.externalIcon} /></a>}
                             <a href={`tel:${company.phone.replace(/[^+\d]/g, "")}`}><FiPhone aria-hidden="true" /><span><strong>{company.phone}</strong><small>Business phone</small></span><FiArrowUpRight aria-hidden="true" className={styles.externalIcon} /></a>
                             <div><FiMapPin aria-hidden="true" /><span><strong>{company.address}</strong><small>Registered address</small></span></div>
