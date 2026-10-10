@@ -6,7 +6,11 @@
     background: #fff;
     color: var(--color-ink);
     font-weight: 650;
-    transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease, color 160ms ease;
+    transition:
+        border-color 160ms ease,
+        box-shadow 160ms ease,
+        background-color 160ms ease,
+        color 160ms ease;
 
     &:hover {
         border-color: #9cad9f;
@@ -34,7 +38,11 @@
     background: var(--color-green);
     color: #fff;
     font-weight: 650;
-    transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease, color 160ms ease;
+    transition:
+        border-color 160ms ease,
+        box-shadow 160ms ease,
+        background-color 160ms ease,
+        color 160ms ease;
 
     &:hover {
         border-color: var(--color-green-dark);

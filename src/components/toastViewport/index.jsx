@@ -12,7 +12,9 @@ const toneIcons = {
 const ToastViewport = ({ toasts = [], onDismiss }) => {
     useEffect(() => {
         if (!toasts.length) return undefined;
-        const timers = toasts.map(({ id }) => window.setTimeout(() => onDismiss(id), 5600));
+        const timers = toasts.map(({ id }) =>
+            window.setTimeout(() => onDismiss(id), 5600),
+        );
         return () => timers.forEach(window.clearTimeout);
     }, [toasts, onDismiss]);
 
@@ -22,14 +24,21 @@ const ToastViewport = ({ toasts = [], onDismiss }) => {
                 const Icon = toneIcons[toast.tone] || FiInfo;
                 return (
                     <article
-                        aria-live={toast.tone === "error" ? "assertive" : "polite"}
+                        aria-live={
+                            toast.tone === "error" ? "assertive" : "polite"
+                        }
                         className={`${styles.toast} ${styles[toast.tone] || styles.info}`}
                         key={toast.id}
                         role="status"
                     >
                         <Icon aria-hidden="true" className={styles.icon} />
                         <p>{toast.message}</p>
-                        <button aria-label="Dismiss notification" className={styles.dismiss} onClick={() => onDismiss(toast.id)} type="button">
+                        <button
+                            aria-label="Dismiss notification"
+                            className={styles.dismiss}
+                            onClick={() => onDismiss(toast.id)}
+                            type="button"
+                        >
                             <FiX aria-hidden="true" />
                         </button>
                     </article>

@@ -57,7 +57,11 @@
         color: var(--color-ink);
         font-size: 14px;
         font-weight: 700;
-        transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease, color 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease,
+            background-color 160ms ease,
+            color 160ms ease;
         @media (prefers-reduced-motion: reduce) {
             transition: none;
         }
@@ -75,7 +79,11 @@
         color: var(--color-ink);
         font-size: 14px;
         font-weight: 700;
-        transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease, color 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease,
+            background-color 160ms ease,
+            color 160ms ease;
         @media (prefers-reduced-motion: reduce) {
             transition: none;
         }
@@ -93,7 +101,11 @@
         color: var(--color-ink);
         font-size: 14px;
         font-weight: 700;
-        transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease, color 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease,
+            background-color 160ms ease,
+            color 160ms ease;
         @media (prefers-reduced-motion: reduce) {
             transition: none;
         }
@@ -111,7 +123,11 @@
         color: var(--color-ink);
         font-size: 14px;
         font-weight: 700;
-        transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease, color 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease,
+            background-color 160ms ease,
+            color 160ms ease;
         @media (prefers-reduced-motion: reduce) {
             transition: none;
         }
@@ -446,7 +462,10 @@
         background: transparent;
         color: #687a71;
         font-size: 16px;
-        transition: border-color 160ms ease, box-shadow 160ms ease, color 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease,
+            color 160ms ease;
         @media (prefers-reduced-motion: reduce) {
             transition: none;
         }
@@ -462,7 +481,10 @@
         background: transparent;
         color: #687a71;
         font-size: 16px;
-        transition: border-color 160ms ease, box-shadow 160ms ease, color 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease,
+            color 160ms ease;
         @media (prefers-reduced-motion: reduce) {
             transition: none;
         }
@@ -478,7 +500,10 @@
         background: transparent;
         color: #687a71;
         font-size: 16px;
-        transition: border-color 160ms ease, box-shadow 160ms ease, color 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease,
+            color 160ms ease;
         @media (prefers-reduced-motion: reduce) {
             transition: none;
         }
@@ -660,7 +685,9 @@
         color: var(--color-ink);
         font-size: 14px;
         font-weight: 400;
-        transition: border-color 160ms ease, box-shadow 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
         @media (prefers-reduced-motion: reduce) {
             transition: none;
         }
@@ -676,7 +703,9 @@
         color: var(--color-ink);
         font-size: 14px;
         font-weight: 400;
-        transition: border-color 160ms ease, box-shadow 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
         @media (prefers-reduced-motion: reduce) {
             transition: none;
         }
@@ -692,7 +721,9 @@
         color: var(--color-ink);
         font-size: 14px;
         font-weight: 400;
-        transition: border-color 160ms ease, box-shadow 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
         @media (prefers-reduced-motion: reduce) {
             transition: none;
         }

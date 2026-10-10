@@ -47,7 +47,7 @@
         color: #798a80;
         font-size: 13px;
         font-weight: 750;
-        letter-spacing: .09em;
+        letter-spacing: 0.09em;
     }
     .paper h1 {
         margin-top: 7px;
@@ -89,7 +89,10 @@
         font-size: 14px;
         font-weight: 700;
         text-decoration: none;
-        transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease,
+            background-color 160ms ease;
         @media (prefers-reduced-motion: reduce) {
             transition: none;
         }
@@ -108,7 +111,10 @@
         font-size: 14px;
         font-weight: 700;
         text-decoration: none;
-        transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease,
+            background-color 160ms ease;
         @media (prefers-reduced-motion: reduce) {
             transition: none;
         }
@@ -145,7 +151,10 @@
         background: transparent;
         color: #5d7166;
         font-size: 14px;
-        transition: border-color 160ms ease, box-shadow 160ms ease, color 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease,
+            color 160ms ease;
         @media (prefers-reduced-motion: reduce) {
             transition: none;
         }

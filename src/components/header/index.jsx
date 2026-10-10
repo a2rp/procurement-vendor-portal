@@ -1,6 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { FiArrowUpRight, FiBriefcase, FiFileText, FiGrid, FiMenu, FiPackage, FiSearch, FiTruck, FiX } from "react-icons/fi";
+import {
+    FiArrowUpRight,
+    FiBriefcase,
+    FiFileText,
+    FiGrid,
+    FiMenu,
+    FiPackage,
+    FiSearch,
+    FiTruck,
+    FiX,
+} from "react-icons/fi";
 import { FaGithub } from "react-icons/fa6";
 import styles from "./styles.module.css";
 
@@ -35,12 +45,16 @@ const AppHeader = ({ globalSearch, setGlobalSearch, addToast }) => {
     useEffect(() => {
         const handleHistoryNavigation = () => setMenuOpen(false);
         window.addEventListener("popstate", handleHistoryNavigation);
-        return () => window.removeEventListener("popstate", handleHistoryNavigation);
+        return () =>
+            window.removeEventListener("popstate", handleHistoryNavigation);
     }, []);
 
     useEffect(() => {
         const handleShortcut = (event) => {
-            if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
+            if (
+                (event.ctrlKey || event.metaKey) &&
+                event.key.toLowerCase() === "k"
+            ) {
                 event.preventDefault();
                 searchRef.current?.focus();
             }
@@ -58,28 +72,50 @@ const AppHeader = ({ globalSearch, setGlobalSearch, addToast }) => {
     const handleRepository = (event) => {
         if (!navigator.onLine) {
             event.preventDefault();
-            addToast("The repository link needs an internet connection.", "warning");
+            addToast(
+                "The repository link needs an internet connection.",
+                "warning",
+            );
         }
     };
 
     return (
-        <header className={`${styles.header} ${isHidden && !menuOpen ? styles.hidden : ""}`}>
+        <header
+            className={`${styles.header} ${isHidden && !menuOpen ? styles.hidden : ""}`}
+        >
             <div className={styles.inner}>
-                <NavLink aria-label="Sourcelane overview" className={styles.brand} end to="/">
-                    <span aria-hidden="true" className={styles.brandMark}><FiTruck /></span>
-                    <span className={styles.wordmark}>sourcelane<span>.</span></span>
+                <NavLink
+                    aria-label="Sourcelane overview"
+                    className={styles.brand}
+                    end
+                    to="/"
+                >
+                    <span aria-hidden="true" className={styles.brandMark}>
+                        <FiTruck />
+                    </span>
+                    <span className={styles.wordmark}>
+                        sourcelane<span>.</span>
+                    </span>
                 </NavLink>
 
-                <nav aria-label="Main navigation" className={`${styles.navigation} ${menuOpen ? styles.navigationOpen : ""}`}>
+                <nav
+                    aria-label="Main navigation"
+                    className={`${styles.navigation} ${menuOpen ? styles.navigationOpen : ""}`}
+                >
                     {navigation.map(({ to, label, icon: Icon, end }) => (
                         <NavLink
-                            className={({ isActive }) => `${styles.navLink} ${isActive ? styles.active : ""}`}
+                            className={({ isActive }) =>
+                                `${styles.navLink} ${isActive ? styles.active : ""}`
+                            }
                             end={end}
                             key={to}
                             onClick={() => setMenuOpen(false)}
                             to={to}
                         >
-                            <Icon aria-hidden="true" className={styles.mobileIcon} />
+                            <Icon
+                                aria-hidden="true"
+                                className={styles.mobileIcon}
+                            />
                             {label}
                         </NavLink>
                     ))}
@@ -90,15 +126,29 @@ const AppHeader = ({ globalSearch, setGlobalSearch, addToast }) => {
                         <FiSearch aria-hidden="true" />
                         <input
                             aria-label="Search the current page"
-                            onChange={(event) => setGlobalSearch(event.target.value)}
+                            onChange={(event) =>
+                                setGlobalSearch(event.target.value)
+                            }
                             placeholder="Search workspace"
                             ref={searchRef}
                             type="search"
                             value={globalSearch}
                         />
-                        {!globalSearch && <span aria-hidden="true" className={styles.shortcut}>Ctrl K</span>}
+                        {!globalSearch && (
+                            <span
+                                aria-hidden="true"
+                                className={styles.shortcut}
+                            >
+                                Ctrl K
+                            </span>
+                        )}
                     </label>
-                    <button aria-label="Create a new invoice" className={styles.newInvoice} onClick={openNewInvoice} type="button">
+                    <button
+                        aria-label="Create a new invoice"
+                        className={styles.newInvoice}
+                        onClick={openNewInvoice}
+                        type="button"
+                    >
                         <FiFileText aria-hidden="true" />
                         <span>New invoice</span>
                     </button>
@@ -112,16 +162,27 @@ const AppHeader = ({ globalSearch, setGlobalSearch, addToast }) => {
                     >
                         <FaGithub aria-hidden="true" />
                         <span>Repository</span>
-                        <FiArrowUpRight aria-hidden="true" className={styles.externalArrow} />
+                        <FiArrowUpRight
+                            aria-hidden="true"
+                            className={styles.externalArrow}
+                        />
                     </a>
                     <button
                         aria-expanded={menuOpen}
-                        aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+                        aria-label={
+                            menuOpen
+                                ? "Close navigation menu"
+                                : "Open navigation menu"
+                        }
                         className={styles.menuButton}
                         onClick={() => setMenuOpen((open) => !open)}
                         type="button"
                     >
-                        {menuOpen ? <FiX aria-hidden="true" /> : <FiMenu aria-hidden="true" />}
+                        {menuOpen ? (
+                            <FiX aria-hidden="true" />
+                        ) : (
+                            <FiMenu aria-hidden="true" />
+                        )}
                     </button>
                 </div>
             </div>

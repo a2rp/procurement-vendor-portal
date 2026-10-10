@@ -18,8 +18,14 @@ const AppRoutes = ({ pageProps }) => {
                 <Route element={<OverviewPage {...pageProps} />} path="/" />
                 <Route element={<RfqsPage {...pageProps} />} path="/rfqs" />
                 <Route element={<OrdersPage {...pageProps} />} path="/orders" />
-                <Route element={<InvoicesPage {...pageProps} />} path="/invoices" />
-                <Route element={<CompanyPage {...pageProps} />} path="/company" />
+                <Route
+                    element={<InvoicesPage {...pageProps} />}
+                    path="/invoices"
+                />
+                <Route
+                    element={<CompanyPage {...pageProps} />}
+                    path="/company"
+                />
                 <Route element={<NotFoundPage />} path="*" />
             </Routes>
         </Suspense>

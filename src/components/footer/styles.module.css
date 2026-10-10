@@ -75,7 +75,10 @@
         border-radius: 11px;
         color: #697a72;
         text-decoration: none;
-        transition: border-color 160ms ease, box-shadow 160ms ease, color 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease,
+            color 160ms ease;
         @media (prefers-reduced-motion: reduce) {
             transition: none;
         }

@@ -71,7 +71,10 @@
         background: #fff;
         color: var(--color-muted);
         font-size: 18px;
-        transition: border-color 160ms ease, box-shadow 160ms ease, color 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease,
+            color 160ms ease;
         @media (prefers-reduced-motion: reduce) {
             transition: none;
         }
@@ -117,7 +120,7 @@
 @keyframes dialogIn {
     from {
         opacity: 0;
-        scale: .985;
+        scale: 0.985;
     }
     to {
         opacity: 1;

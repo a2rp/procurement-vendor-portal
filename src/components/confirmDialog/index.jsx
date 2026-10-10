@@ -16,9 +16,14 @@ const ConfirmDialog = ({ confirmation, onCancel, onConfirm }) => {
             onClose={onCancel}
             size="small"
             title={confirmation?.title || "Please confirm"}
-            footer={(
+            footer={
                 <>
-                    <button className={styles.cancelButton} onClick={onCancel} ref={cancelRef} type="button">
+                    <button
+                        className={styles.cancelButton}
+                        onClick={onCancel}
+                        ref={cancelRef}
+                        type="button"
+                    >
                         {confirmation?.cancelLabel || "Cancel"}
                     </button>
                     <button
@@ -26,13 +31,17 @@ const ConfirmDialog = ({ confirmation, onCancel, onConfirm }) => {
                         onClick={onConfirm}
                         type="button"
                     >
-                        {confirmation?.icon && <FiAlertTriangle aria-hidden="true" />}
+                        {confirmation?.icon && (
+                            <FiAlertTriangle aria-hidden="true" />
+                        )}
                         {confirmation?.confirmLabel || "Confirm"}
                     </button>
                 </>
-            )}
+            }
         >
-            {confirmation?.details && <p className={styles.details}>{confirmation.details}</p>}
+            {confirmation?.details && (
+                <p className={styles.details}>{confirmation.details}</p>
+            )}
         </Dialog>
     );
 };

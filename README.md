@@ -10,14 +10,14 @@ The images below were captured from the finished app. They show every route and 
 
 ### Pages
 
-| Page | Preview |
-| --- | --- |
-| Overview | ![Overview with supplier work queue, procurement metrics, and delivery desk](./screenshots/pages/overview.png) |
-| Requests for quotation | ![RFQ list with quote status and buyer requests](./screenshots/pages/rfqs.png) |
-| Purchase orders | ![Purchase order book with fulfillment steps and selected order details](./screenshots/pages/orders.png) |
-| Invoices | ![Invoice register with drafts and payment statuses](./screenshots/pages/invoices.png) |
-| Company profile | ![Supplier company information and compliance register](./screenshots/pages/company.png) |
-| Not found | ![Custom not found page for unknown routes](./screenshots/pages/not-found.png) |
+| Page                   | Preview                                                                                                        |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Overview               | ![Overview with supplier work queue, procurement metrics, and delivery desk](./screenshots/pages/overview.png) |
+| Requests for quotation | ![RFQ list with quote status and buyer requests](./screenshots/pages/rfqs.png)                                 |
+| Purchase orders        | ![Purchase order book with fulfillment steps and selected order details](./screenshots/pages/orders.png)       |
+| Invoices               | ![Invoice register with drafts and payment statuses](./screenshots/pages/invoices.png)                         |
+| Company profile        | ![Supplier company information and compliance register](./screenshots/pages/company.png)                       |
+| Not found              | ![Custom not found page for unknown routes](./screenshots/pages/not-found.png)                                 |
 
 ### Modals and confirmations
 

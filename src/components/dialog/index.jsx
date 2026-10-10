@@ -2,9 +2,20 @@ import { useEffect, useRef } from "react";
 import { FiX } from "react-icons/fi";
 import styles from "./styles.module.css";
 
-const focusableSelector = "button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex='-1'])";
+const focusableSelector =
+    "button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex='-1'])";
 
-const Dialog = ({ isOpen, onClose, title, description, children, footer, size = "medium", labelId = "portal-dialog-title", initialFocusRef }) => {
+const Dialog = ({
+    isOpen,
+    onClose,
+    title,
+    description,
+    children,
+    footer,
+    size = "medium",
+    labelId = "portal-dialog-title",
+    initialFocusRef,
+}) => {
     const dialogRef = useRef(null);
     const previouslyFocused = useRef(null);
     const onCloseRef = useRef(onClose);
@@ -16,8 +27,13 @@ const Dialog = ({ isOpen, onClose, title, description, children, footer, size = 
     useEffect(() => {
         if (!isOpen) return undefined;
         previouslyFocused.current = document.activeElement;
-        const firstFocusable = dialogRef.current?.querySelector(focusableSelector);
-        (initialFocusRef?.current || firstFocusable || dialogRef.current)?.focus();
+        const firstFocusable =
+            dialogRef.current?.querySelector(focusableSelector);
+        (
+            initialFocusRef?.current ||
+            firstFocusable ||
+            dialogRef.current
+        )?.focus();
 
         const handleKeyDown = (event) => {
             if (event.key === "Escape") {
@@ -26,7 +42,9 @@ const Dialog = ({ isOpen, onClose, title, description, children, footer, size = 
                 return;
             }
             if (event.key !== "Tab" || !dialogRef.current) return;
-            const items = [...dialogRef.current.querySelectorAll(focusableSelector)];
+            const items = [
+                ...dialogRef.current.querySelectorAll(focusableSelector),
+            ];
             if (!items.length) {
                 event.preventDefault();
                 dialogRef.current.focus();
@@ -52,11 +70,16 @@ const Dialog = ({ isOpen, onClose, title, description, children, footer, size = 
     if (!isOpen) return null;
 
     return (
-        <div className={styles.backdrop} onMouseDown={(event) => {
-            if (event.target === event.currentTarget) onClose?.();
-        }}>
+        <div
+            className={styles.backdrop}
+            onMouseDown={(event) => {
+                if (event.target === event.currentTarget) onClose?.();
+            }}
+        >
             <section
-                aria-describedby={description ? `${labelId}-description` : undefined}
+                aria-describedby={
+                    description ? `${labelId}-description` : undefined
+                }
                 aria-labelledby={labelId}
                 aria-modal="true"
                 className={`${styles.dialog} ${styles[size] || ""}`}
@@ -67,9 +90,16 @@ const Dialog = ({ isOpen, onClose, title, description, children, footer, size = 
                 <header className={styles.header}>
                     <div className={styles.heading}>
                         <h2 id={labelId}>{title}</h2>
-                        {description && <p id={`${labelId}-description`}>{description}</p>}
+                        {description && (
+                            <p id={`${labelId}-description`}>{description}</p>
+                        )}
                     </div>
-                    <button aria-label="Close dialog" className={styles.closeButton} onClick={onClose} type="button">
+                    <button
+                        aria-label="Close dialog"
+                        className={styles.closeButton}
+                        onClick={onClose}
+                        type="button"
+                    >
                         <FiX aria-hidden="true" />
                     </button>
                 </header>

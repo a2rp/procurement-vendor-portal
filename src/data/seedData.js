@@ -23,7 +23,12 @@ export const seedRfqs = [
         status: "Quoted",
         note: "Grade 316 hardware, packed into sealed line-side kits.",
         reference: "CMS-316-21",
-        quote: { unitPrice: 11.3, leadDays: 12, validTo: "2026-10-24", note: "Includes labeled kit packaging." },
+        quote: {
+            unitPrice: 11.3,
+            leadDays: 12,
+            validTo: "2026-10-24",
+            note: "Includes labeled kit packaging.",
+        },
     },
     {
         id: "RFQ-1179",
@@ -49,7 +54,12 @@ export const seedRfqs = [
         status: "Awarded",
         note: "Direct thermal, permanent adhesive, 1 inch core.",
         reference: "FI-LBL-406",
-        quote: { unitPrice: 8.4, leadDays: 6, validTo: "2026-10-18", note: "Stock available for immediate release." },
+        quote: {
+            unitPrice: 8.4,
+            leadDays: 6,
+            validTo: "2026-10-18",
+            note: "Stock available for immediate release.",
+        },
     },
     {
         id: "RFQ-1168",
@@ -91,7 +101,13 @@ export const seedOrders = [
         status: "Awaiting acceptance",
         reference: "NSR-PO-4418",
         tracking: "",
-        lines: [{ name: "Reusable ESD tote tray, 600 x 400 mm", quantity: 1200, unitPrice: 15.2 }],
+        lines: [
+            {
+                name: "Reusable ESD tote tray, 600 x 400 mm",
+                quantity: 1200,
+                unitPrice: 15.2,
+            },
+        ],
     },
     {
         id: "PO-60418",
@@ -104,7 +120,13 @@ export const seedOrders = [
         status: "In production",
         reference: "CMS-PO-3396",
         tracking: "",
-        lines: [{ name: "316 stainless line-side hardware kit", quantity: 840, unitPrice: 11.3 }],
+        lines: [
+            {
+                name: "316 stainless line-side hardware kit",
+                quantity: 840,
+                unitPrice: 11.3,
+            },
+        ],
     },
     {
         id: "PO-60412",
@@ -117,7 +139,13 @@ export const seedOrders = [
         status: "Ready to ship",
         reference: "FI-PO-2031",
         tracking: "",
-        lines: [{ name: "Thermal label roll, 4 x 6 in", quantity: 500, unitPrice: 8.4 }],
+        lines: [
+            {
+                name: "Thermal label roll, 4 x 6 in",
+                quantity: 500,
+                unitPrice: 8.4,
+            },
+        ],
     },
     {
         id: "PO-60398",
@@ -131,7 +159,13 @@ export const seedOrders = [
         reference: "NSR-PO-4382",
         tracking: "DHL-7641-8820",
         carrier: "DHL Freight",
-        lines: [{ name: "Cleanroom nitrile glove, case of 1000", quantity: 600, unitPrice: 19 }],
+        lines: [
+            {
+                name: "Cleanroom nitrile glove, case of 1000",
+                quantity: 600,
+                unitPrice: 19,
+            },
+        ],
     },
     {
         id: "PO-60377",
@@ -145,7 +179,13 @@ export const seedOrders = [
         reference: "CMS-PO-3310",
         tracking: "FDX-9022-1865",
         carrier: "FedEx",
-        lines: [{ name: "Cut-resistant assembly glove, pair", quantity: 420, unitPrice: 16 }],
+        lines: [
+            {
+                name: "Cut-resistant assembly glove, pair",
+                quantity: 420,
+                unitPrice: 16,
+            },
+        ],
     },
     {
         id: "PO-60370",
@@ -159,7 +199,13 @@ export const seedOrders = [
         reference: "HKE-PO-1806",
         tracking: "UPS-6138-4472",
         carrier: "UPS",
-        lines: [{ name: "Double-wall recycled carton", quantity: 900, unitPrice: 3.5 }],
+        lines: [
+            {
+                name: "Double-wall recycled carton",
+                quantity: 900,
+                unitPrice: 3.5,
+            },
+        ],
     },
     {
         id: "PO-60342",
@@ -173,7 +219,13 @@ export const seedOrders = [
         reference: "FI-PO-1984",
         tracking: "UPS-4860-3175",
         carrier: "UPS",
-        lines: [{ name: "Precision-cut calibration case insert", quantity: 180, unitPrice: 13 }],
+        lines: [
+            {
+                name: "Precision-cut calibration case insert",
+                quantity: 180,
+                unitPrice: 13,
+            },
+        ],
     },
 ];
 
@@ -249,8 +301,32 @@ export const seedCompany = {
 };
 
 export const seedCompliance = [
-    { id: "DOC-01", name: "W-9 tax form", status: "Verified", expires: "2027-03-31", owner: "Mae Rivera" },
-    { id: "DOC-02", name: "ISO 9001 certificate", status: "Verified", expires: "2027-01-18", owner: "Mae Rivera" },
-    { id: "DOC-03", name: "Certificate of insurance", status: "Renewal due", expires: "2026-11-02", owner: "Mae Rivera" },
-    { id: "DOC-04", name: "Bank details", status: "Verified", expires: "", owner: "Finance team" },
+    {
+        id: "DOC-01",
+        name: "W-9 tax form",
+        status: "Verified",
+        expires: "2027-03-31",
+        owner: "Mae Rivera",
+    },
+    {
+        id: "DOC-02",
+        name: "ISO 9001 certificate",
+        status: "Verified",
+        expires: "2027-01-18",
+        owner: "Mae Rivera",
+    },
+    {
+        id: "DOC-03",
+        name: "Certificate of insurance",
+        status: "Renewal due",
+        expires: "2026-11-02",
+        owner: "Mae Rivera",
+    },
+    {
+        id: "DOC-04",
+        name: "Bank details",
+        status: "Verified",
+        expires: "",
+        owner: "Finance team",
+    },
 ];

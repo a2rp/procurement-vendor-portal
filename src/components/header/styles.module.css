@@ -7,7 +7,9 @@
     background: rgb(255 255 255 / 94%);
     box-shadow: 0 8px 30px rgb(27 52 43 / 4%);
     backdrop-filter: blur(16px);
-    transition: translate 240ms ease, box-shadow 180ms ease;
+    transition:
+        translate 240ms ease,
+        box-shadow 180ms ease;
     &.hidden {
         translate: 0 -105%;
         box-shadow: none;
@@ -207,7 +209,9 @@
         border-radius: 13px;
         background: #f9fbf8;
         color: #7b8b84;
-        transition: border-color 160ms ease, box-shadow 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
         @media (max-width: 1250px) {
             width: clamp(170px, 17vw, 230px);
         }
@@ -294,7 +298,10 @@
         font-weight: 700;
         text-decoration: none;
         white-space: nowrap;
-        transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease,
+            background-color 160ms ease;
         @media (max-width: 1250px) {
             padding-inline: 11px;
         }
@@ -328,7 +335,10 @@
         font-weight: 700;
         text-decoration: none;
         white-space: nowrap;
-        transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease,
+            background-color 160ms ease;
         @media (max-width: 1250px) {
             padding-inline: 11px;
         }
@@ -391,7 +401,9 @@
             border-radius: 12px;
             background: #fff;
             font-size: 21px;
-            transition: border-color 160ms ease, box-shadow 160ms ease;
+            transition:
+                border-color 160ms ease,
+                box-shadow 160ms ease;
         }
         @media (max-width: 650px) {
             width: 42px;
