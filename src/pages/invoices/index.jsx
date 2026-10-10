@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { FiArrowDownUp, FiArrowUpRight, FiCheckCircle, FiClipboard, FiDownload, FiEye, FiFilePlus, FiFilter, FiPlus, FiTrash2 } from "react-icons/fi";
+import { FiArrowUpRight, FiCheckCircle, FiClipboard, FiDownload, FiEye, FiFilePlus, FiFilter, FiPlus, FiRepeat, FiTrash2 } from "react-icons/fi";
 import Dialog from "../../components/dialog/index.jsx";
 import { usePortal } from "../../context/usePortal.js";
 import { downloadCsv, formatCurrency, formatDate } from "../../utils/formatters.js";
@@ -150,7 +150,7 @@ const InvoicesPage = () => {
             </section>
 
             <section aria-label="Invoice register" className={styles.register}>
-                <div className={styles.registerHeader}><div><h2>Invoice register</h2><p>{visibleInvoices.length} invoices shown</p></div><div className={styles.filters}><label><FiFilter aria-hidden="true" /><span className={styles.srOnly}>Filter invoice status</span><select onChange={(event) => setStatusFilter(event.target.value)} value={statusFilter}><option>All invoices</option>{statusOptions.map((status) => <option key={status}>{status}</option>)}</select></label><label><FiArrowDownUp aria-hidden="true" /><span className={styles.srOnly}>Sort invoices</span><select onChange={(event) => setSortBy(event.target.value)} value={sortBy}><option>Newest</option><option>Due date</option><option>Amount</option></select></label></div></div>
+                <div className={styles.registerHeader}><div><h2>Invoice register</h2><p>{visibleInvoices.length} invoices shown</p></div><div className={styles.filters}><label><FiFilter aria-hidden="true" /><span className={styles.srOnly}>Filter invoice status</span><select onChange={(event) => setStatusFilter(event.target.value)} value={statusFilter}><option>All invoices</option>{statusOptions.map((status) => <option key={status}>{status}</option>)}</select></label><label><FiRepeat aria-hidden="true" /><span className={styles.srOnly}>Sort invoices</span><select onChange={(event) => setSortBy(event.target.value)} value={sortBy}><option>Newest</option><option>Due date</option><option>Amount</option></select></label></div></div>
                 <div className={styles.tableScroll}><table><thead><tr><th>Invoice</th><th>Buyer &amp; order</th><th>Dates</th><th>Status</th><th>Amount</th><th><span className={styles.srOnly}>Actions</span></th></tr></thead><tbody>
                     {visibleInvoices.map((invoice) => (
                         <tr key={invoice.id}>
