@@ -8,6 +8,11 @@ const focusableSelector = "button:not([disabled]), a[href], input:not([disabled]
 const Dialog = ({ isOpen, onClose, title, description, children, footer, size = "medium", labelId = "portal-dialog-title", initialFocusRef }) => {
     const dialogRef = useRef(null);
     const previouslyFocused = useRef(null);
+    const onCloseRef = useRef(onClose);
+
+    useEffect(() => {
+        onCloseRef.current = onClose;
+    }, [onClose]);
 
     useEffect(() => {
         if (!isOpen) return undefined;
@@ -18,7 +23,7 @@ const Dialog = ({ isOpen, onClose, title, description, children, footer, size = 
         const handleKeyDown = (event) => {
             if (event.key === "Escape") {
                 event.stopPropagation();
-                onClose?.();
+                onCloseRef.current?.();
                 return;
             }
             if (event.key !== "Tab" || !dialogRef.current) return;
@@ -43,7 +48,7 @@ const Dialog = ({ isOpen, onClose, title, description, children, footer, size = 
             document.removeEventListener("keydown", handleKeyDown);
             previouslyFocused.current?.focus?.();
         };
-    }, [isOpen, onClose, initialFocusRef]);
+    }, [isOpen, initialFocusRef]);
 
     if (!isOpen) return null;
 
