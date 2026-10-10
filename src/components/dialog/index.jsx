@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { createPortal } from "react-dom";
 import { FiX } from "react-icons/fi";
 import styles from "./styles.module.css";
 
@@ -52,7 +51,7 @@ const Dialog = ({ isOpen, onClose, title, description, children, footer, size = 
 
     if (!isOpen) return null;
 
-    return createPortal(
+    return (
         <div className={styles.backdrop} onMouseDown={(event) => {
             if (event.target === event.currentTarget) onClose?.();
         }}>
@@ -77,8 +76,7 @@ const Dialog = ({ isOpen, onClose, title, description, children, footer, size = 
                 <div className={styles.content}>{children}</div>
                 {footer && <footer className={styles.footer}>{footer}</footer>}
             </section>
-        </div>,
-        document.body,
+        </div>
     );
 };
 
