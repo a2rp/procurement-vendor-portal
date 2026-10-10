@@ -128,7 +128,7 @@ const OrdersPage = () => {
                 size="small"
                 title="Add shipping details"
             >
-                <form className={styles.dispatchForm} id="dispatch-form" onSubmit={saveDispatch}><p>Enter the carrier and tracking reference that your buyer can use for this order.</p><label>Carrier<input autoComplete="organization" onChange={(event) => setShipping((current) => ({ ...current, carrier: event.target.value }))} placeholder="e.g. DHL Freight" required value={shipping.carrier} /></label><label>Tracking reference<input onChange={(event) => setShipping((current) => ({ ...current, tracking: event.target.value }))} placeholder="e.g. DHL-7641-8820" required value={shipping.tracking} /></label>{formError && <p className={styles.formError} role="alert">{formError}</p>}</form>
+                <form className={styles.dispatchForm} id="dispatch-form" noValidate onSubmit={saveDispatch}><p>Enter the carrier and tracking reference that your buyer can use for this order.</p><label>Carrier<input autoComplete="organization" onChange={(event) => setShipping((current) => ({ ...current, carrier: event.target.value }))} placeholder="e.g. DHL Freight" required value={shipping.carrier} /></label><label>Tracking reference<input onChange={(event) => setShipping((current) => ({ ...current, tracking: event.target.value }))} placeholder="e.g. DHL-7641-8820" required value={shipping.tracking} /></label>{formError && <p className={styles.formError} role="alert">{formError}</p>}</form>
             </Dialog>
         </div>
     );
