@@ -101,11 +101,12 @@ const AppHeader = () => {
                         />
                         {!globalSearch && <span aria-hidden="true" className={styles.shortcut}>Ctrl K</span>}
                     </label>
-                    <button className={styles.newInvoice} onClick={openNewInvoice} type="button">
+                    <button aria-label="Create a new invoice" className={styles.newInvoice} onClick={openNewInvoice} type="button">
                         <FiFileText aria-hidden="true" />
                         <span>New invoice</span>
                     </button>
                     <a
+                        aria-label="Open the public source repository"
                         className={styles.repository}
                         href="https://github.com/a2rp/procurement-vendor-portal"
                         onClick={handleRepository}
