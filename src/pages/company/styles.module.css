@@ -1,0 +1,686 @@
+.page {
+    width: min(100% - 64px, 1420px);
+    margin: 0 auto;
+    padding: 34px 0 58px;
+    .heading {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 24px;
+        @media (max-width: 650px) {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 14px;
+        }
+    }
+    .breadcrumb {
+        margin-bottom: 10px;
+        color: var(--color-muted);
+        font-size: 13px;
+    }
+    .breadcrumb span {
+        padding: 0 7px;
+        color: #a0aaa4;
+    }
+    .heading h1 {
+        font-size: clamp(30px, 3vw, 40px);
+        line-height: 1.1;
+        letter-spacing: -0.05em;
+        @media (max-width: 650px) {
+            font-size: 30px;
+        }
+    }
+    .description {
+        margin-top: 9px;
+        color: var(--color-muted);
+        font-size: 15px;
+        @media (max-width: 650px) {
+            font-size: 14px;
+        }
+    }
+    .exportButton, .addButton, .editProfile, .primaryButton, .secondaryButton {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 0 15px;
+        border: 1px solid var(--color-line);
+        border-radius: 11px;
+        background: #fff;
+        color: var(--color-ink);
+        font-size: 14px;
+        font-weight: 700;
+        transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease, color 160ms ease;
+    }
+    .exportButton:hover, .secondaryButton:hover {
+        border-color: #9cad9f;
+        box-shadow: 0 5px 16px rgb(28 56 45 / 9%);
+    }
+    .exportButton svg {
+        color: var(--color-green);
+        font-size: 17px;
+    }
+    .readiness {
+        display: grid;
+        grid-template-columns: 54px minmax(250px, 1fr) minmax(260px, .72fr);
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 24px;
+        padding: 21px 24px;
+        border: 1px solid #d8e4d9;
+        border-radius: 17px;
+        background: #eff5eb;
+        @media (max-width: 1050px) {
+            grid-template-columns: 52px 1fr;
+        }
+        @media (max-width: 650px) {
+            grid-template-columns: 42px minmax(0, 1fr);
+            gap: 12px;
+            padding: 16px;
+        }
+    }
+    .readinessIcon {
+        display: grid;
+        width: 50px;
+        height: 50px;
+        place-items: center;
+        border: 1px solid #d9e5d9;
+        border-radius: 15px;
+        background: #fff;
+        color: var(--color-green);
+        font-size: 22px;
+        @media (max-width: 650px) {
+            width: 42px;
+            height: 42px;
+            font-size: 19px;
+        }
+    }
+    .readinessCopy {
+        min-width: 0;
+    }
+    .readinessCopy > div {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 8px;
+    }
+    .readinessCopy h2 {
+        font-size: 17px;
+        letter-spacing: -0.02em;
+        @media (max-width: 650px) {
+            font-size: 15px;
+        }
+    }
+    .readinessCopy strong {
+        color: var(--color-green-dark);
+        font-size: 15px;
+        @media (max-width: 650px) {
+            font-size: 14px;
+        }
+    }
+    .readinessCopy > p {
+        margin-top: 4px;
+        color: #67766d;
+        font-size: 13px;
+        @media (max-width: 650px) {
+            font-size: 13px;
+        }
+    }
+    .progress {
+        height: 7px;
+        overflow: hidden;
+        margin-top: 12px;
+        border-radius: 99px;
+        background: #dce7d8;
+    }
+    .progress span {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--color-green), #9db963);
+        transition: width 260ms ease;
+    }
+    .readyChecks {
+        display: grid;
+        gap: 9px;
+        padding-left: 22px;
+        border-left: 1px solid #d6e2d5;
+        color: #52665a;
+        @media (max-width: 1050px) {
+            grid-column: 2;
+            grid-template-columns: 1fr 1fr;
+            padding-left: 0;
+            border-left: 0;
+        }
+        @media (max-width: 650px) {
+            grid-column: 1 / -1;
+            grid-template-columns: 1fr;
+            padding-top: 11px;
+            border-top: 1px solid #d6e2d5;
+        }
+    }
+    .readyChecks span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+    }
+    .readyChecks svg {
+        color: #508261;
+        font-size: 16px;
+    }
+    .contentGrid {
+        display: grid;
+        grid-template-columns: minmax(330px, .85fr) minmax(0, 1.35fr);
+        align-items: start;
+        gap: 20px;
+        @media (max-width: 1050px) {
+            grid-template-columns: 1fr;
+        }
+    }
+    .companyCard, .complianceCard {
+        overflow: hidden;
+        border: 1px solid var(--color-line);
+        border-radius: 18px;
+        background: #fff;
+        box-shadow: 0 12px 34px rgb(28 56 45 / 5%);
+    }
+    .companyCover {
+        position: relative;
+        display: flex;
+        min-height: 118px;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 20px;
+        overflow: hidden;
+        background: linear-gradient(115deg, #19493d, #276250 58%, #718744);
+        @media (max-width: 1050px) {
+            min-height: 100%;
+            flex-direction: column;
+        }
+        @media (max-width: 650px) {
+            min-height: 110px;
+            flex-direction: row;
+        }
+    }
+    .coverMark {
+        z-index: 1;
+        display: grid;
+        width: 46px;
+        height: 46px;
+        place-items: center;
+        border: 1px solid rgb(255 255 255 / 28%);
+        border-radius: 14px;
+        background: rgb(255 255 255 / 12%);
+        color: #e0f0b6;
+        font-size: 22px;
+    }
+    .vendorId {
+        z-index: 1;
+        padding: 6px 10px;
+        border: 1px solid rgb(255 255 255 / 28%);
+        border-radius: 999px;
+        color: #f2f7ec;
+        font-size: 13px;
+        font-weight: 700;
+    }
+    .coverMesh {
+        position: absolute;
+        top: -90px;
+        right: -40px;
+        width: 280px;
+        height: 250px;
+        border: 1px solid rgb(226 241 198 / 24%);
+        border-radius: 50%;
+        rotate: -22deg;
+        box-shadow: 0 0 0 26px rgb(226 241 198 / 5%), 0 0 0 54px rgb(226 241 198 / 4%);
+    }
+    .companyBody {
+        padding: 22px;
+        @media (max-width: 1050px) {
+            padding: 20px;
+        }
+        @media (max-width: 650px) {
+            padding: 17px;
+        }
+    }
+    .companyTitle {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 13px;
+    }
+    .companyTitle h2 {
+        font-size: 21px;
+        letter-spacing: -0.03em;
+        @media (max-width: 650px) {
+            font-size: 19px;
+        }
+    }
+    .companyTitle p {
+        margin-top: 5px;
+        color: var(--color-muted);
+        font-size: 14px;
+    }
+    .editIcon, .iconButton, .deleteButton {
+        display: grid;
+        width: 38px;
+        height: 38px;
+        flex: 0 0 auto;
+        place-items: center;
+        border: 1px solid var(--color-line);
+        border-radius: 10px;
+        background: #fff;
+        color: #677a70;
+        font-size: 16px;
+        transition: border-color 160ms ease, box-shadow 160ms ease, color 160ms ease;
+    }
+    .editIcon:hover, .iconButton:hover {
+        border-color: #93a99a;
+        color: var(--color-green);
+        box-shadow: 0 4px 13px rgb(28 56 45 / 8%);
+    }
+    .about {
+        margin-top: 15px;
+        color: #627269;
+        font-size: 14px;
+        line-height: 1.65;
+    }
+    .categoryList {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 17px;
+    }
+    .categoryList span {
+        padding: 5px 9px;
+        border-radius: 999px;
+        background: #eff4ed;
+        color: #4e6958;
+        font-size: 13px;
+    }
+    .contactList {
+        display: grid;
+        gap: 0;
+        margin-top: 19px;
+        border-top: 1px solid #eaf0eb;
+    }
+    .contactList > div, .contactList > a {
+        display: grid;
+        grid-template-columns: 20px minmax(0, 1fr) 16px;
+        align-items: center;
+        gap: 11px;
+        min-height: 63px;
+        border-bottom: 1px solid #eaf0eb;
+        color: var(--color-ink);
+        text-decoration: none;
+    }
+    .contactList > div > svg:first-child, .contactList > a > svg:first-child {
+        color: #779083;
+        font-size: 17px;
+    }
+    .contactList > a:hover strong {
+        color: var(--color-green);
+    }
+    .contactList span {
+        display: grid;
+        min-width: 0;
+        gap: 3px;
+    }
+    .contactList strong {
+        overflow: hidden;
+        font-size: 13px;
+        font-weight: 650;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        transition: color 160ms ease;
+    }
+    .contactList small {
+        color: var(--color-muted);
+        font-size: 13px;
+    }
+    .contactList .externalIcon {
+        color: #93a49a;
+        font-size: 15px;
+    }
+    .editProfile {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 18px;
+        border-color: var(--color-green);
+        background: var(--color-green);
+        color: #fff;
+    }
+    .editProfile:hover {
+        border-color: var(--color-green-dark);
+        background: var(--color-green-dark);
+        box-shadow: 0 6px 17px rgb(29 96 79 / 17%);
+    }
+    .editProfile svg {
+        font-size: 16px;
+    }
+    .complianceHeading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 21px 22px;
+        border-bottom: 1px solid var(--color-line);
+        @media (max-width: 650px) {
+            align-items: flex-start;
+            flex-direction: column;
+            padding: 17px;
+        }
+    }
+    .complianceHeading h2 {
+        font-size: 19px;
+        letter-spacing: -0.025em;
+    }
+    .complianceHeading p {
+        margin-top: 4px;
+        color: var(--color-muted);
+        font-size: 13px;
+    }
+    .addButton {
+        min-height: 41px;
+        padding-inline: 12px;
+        border-color: var(--color-green);
+        background: var(--color-green);
+        color: #fff;
+        white-space: nowrap;
+    }
+    .addButton:hover {
+        border-color: var(--color-green-dark);
+        background: var(--color-green-dark);
+        box-shadow: 0 5px 14px rgb(29 96 79 / 15%);
+    }
+    .addButton svg {
+        font-size: 16px;
+    }
+    .recordList {
+        display: grid;
+    }
+    .record {
+        display: grid;
+        grid-template-columns: 42px minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 12px;
+        min-height: 91px;
+        padding: 14px 18px;
+        border-bottom: 1px solid #edf1ee;
+        @media (max-width: 650px) {
+            grid-template-columns: 37px minmax(0, 1fr) auto;
+            gap: 9px;
+            padding: 13px 11px;
+        }
+    }
+    .recordIcon {
+        display: grid;
+        width: 42px;
+        height: 42px;
+        place-items: center;
+        border-radius: 12px;
+        background: #edf4ee;
+        color: var(--color-green);
+        font-size: 18px;
+        @media (max-width: 650px) {
+            width: 37px;
+            height: 37px;
+        }
+    }
+    .recordIcon.renewal-due {
+        background: #fbf2e4;
+        color: #9a6a2d;
+    }
+    .recordIcon.expired, .recordIcon.missing {
+        background: #f8ecea;
+        color: #a44f45;
+    }
+    .recordInfo {
+        min-width: 0;
+    }
+    .recordTop {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 7px 10px;
+        @media (max-width: 650px) {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 5px;
+        }
+    }
+    .recordTop h3 {
+        font-size: 14px;
+        font-weight: 700;
+        @media (max-width: 650px) {
+            font-size: 13px;
+        }
+    }
+    .status {
+        display: inline-flex;
+        min-height: 25px;
+        align-items: center;
+        padding: 0 8px;
+        border-radius: 999px;
+        background: #e8f2e9;
+        color: #326e46;
+        font-size: 13px;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+    .in-review {
+        background: #e9eff7;
+        color: #4c698a;
+    }
+    .renewal-due {
+        background: #fbf1df;
+        color: #986724;
+    }
+    .expired, .missing {
+        background: #f8ecea;
+        color: #a44f45;
+    }
+    .recordInfo > p {
+        margin-top: 5px;
+        color: var(--color-muted);
+        font-size: 13px;
+        @media (max-width: 650px) {
+            font-size: 13px;
+        }
+    }
+    .recordActions {
+        display: flex;
+        gap: 5px;
+        @media (max-width: 650px) {
+            flex-direction: column;
+        }
+    }
+    .iconButton, .deleteButton {
+        width: 35px;
+        height: 35px;
+        border-color: transparent;
+    }
+    .deleteButton {
+        color: #a6554b;
+    }
+    .deleteButton:hover {
+        border-color: #edc8c3;
+        color: #a13f35;
+        box-shadow: 0 4px 12px rgb(169 72 62 / 9%);
+    }
+    .complianceNote {
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+        padding: 15px 19px;
+        background: #fafcf9;
+        color: #74837a;
+    }
+    .complianceNote svg {
+        flex: 0 0 auto;
+        margin-top: 2px;
+        color: #648b70;
+        font-size: 16px;
+    }
+    .complianceNote p {
+        font-size: 13px;
+    }
+    .emptyState {
+        display: grid;
+        justify-items: center;
+        padding: 42px 16px;
+        text-align: center;
+    }
+    .emptyState > svg {
+        color: #8a9a90;
+        font-size: 27px;
+    }
+    .emptyState h3 {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+    .emptyState p {
+        margin-top: 5px;
+        color: var(--color-muted);
+        font-size: 13px;
+    }
+    .emptyState button {
+        min-height: 41px;
+        margin-top: 13px;
+        padding: 0 13px;
+        border: 1px solid var(--color-line);
+        border-radius: 10px;
+        background: #fff;
+        font-size: 14px;
+    }
+    .emptyState button:hover {
+        border-color: var(--color-green);
+        box-shadow: 0 5px 14px rgb(29 96 79 / 10%);
+    }
+    .primaryButton, .secondaryButton {
+        display: inline-flex;
+        min-height: 45px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 0 15px;
+        border: 1px solid var(--color-green);
+        border-radius: 11px;
+        background: var(--color-green);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+    }
+    .primaryButton:hover {
+        border-color: var(--color-green-dark);
+        background: var(--color-green-dark);
+        box-shadow: 0 6px 17px rgb(29 96 79 / 16%);
+    }
+    .secondaryButton {
+        border-color: var(--color-line);
+        background: #fff;
+        color: var(--color-ink);
+    }
+    .secondaryButton:hover {
+        border-color: #9cad9f;
+        box-shadow: 0 5px 16px rgb(28 56 45 / 9%);
+    }
+    .companyForm, .documentForm {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+        @media (max-width: 650px) {
+            grid-template-columns: 1fr;
+        }
+    }
+    .companyForm label, .documentForm label {
+        display: grid;
+        align-content: start;
+        gap: 7px;
+        font-size: 14px;
+        font-weight: 700;
+    }
+    .companyForm label > span, .documentForm label > span {
+        justify-self: end;
+        margin-top: -27px;
+        color: var(--color-muted);
+        font-size: 13px;
+        font-weight: 400;
+    }
+    .companyForm input, .companyForm textarea, .documentForm input, .documentForm select {
+        width: 100%;
+        min-height: 45px;
+        padding: 9px 11px;
+        border: 1px solid #d5dfd8;
+        border-radius: 10px;
+        outline: 0;
+        background: #fff;
+        color: var(--color-ink);
+        font-size: 14px;
+        font-weight: 400;
+        transition: border-color 160ms ease, box-shadow 160ms ease;
+    }
+    .companyForm input:focus, .companyForm textarea:focus, .documentForm input:focus, .documentForm select:focus {
+        border-color: #7ba48e;
+        box-shadow: 0 0 0 3px rgb(29 96 79 / 9%);
+    }
+    .companyForm textarea {
+        min-height: 90px;
+        resize: vertical;
+    }
+    .fullWidth {
+        grid-column: 1 / -1;
+    }
+    .formError {
+        grid-column: 1 / -1;
+        padding: 10px 12px;
+        border-radius: 9px;
+        background: #fbefec;
+        color: #a04237;
+        font-size: 14px;
+    }
+    .documentForm {
+        grid-template-columns: 1fr 1fr;
+    }
+    .documentDisclaimer {
+        grid-column: 1 / -1;
+        display: flex;
+        gap: 8px;
+        color: var(--color-muted);
+        font-size: 13px;
+    }
+    .documentDisclaimer svg {
+        flex: 0 0 auto;
+        color: #648b70;
+    }
+    @media (max-width: 1050px) {
+        width: min(100% - 40px, 1420px);
+    }
+    .companyCard {
+        @media (max-width: 1050px) {
+            display: grid;
+            grid-template-columns: minmax(230px, .7fr) minmax(0, 1.3fr);
+        }
+        @media (max-width: 650px) {
+            display: block;
+        }
+    }
+    @media (max-width: 650px) {
+        width: calc(100% - 24px);
+        padding: 22px 0 38px;
+    }
+    .fullWidth, .formError, .documentDisclaimer {
+        @media (max-width: 650px) {
+            grid-column: auto;
+        }
+    }
+    .exportButton, .addButton, .editProfile, .primaryButton, .secondaryButton, .progress span, .editIcon, .iconButton, .deleteButton, .contactList strong, .emptyState button, .companyForm input, .companyForm textarea, .documentForm input, .documentForm select {
+        @media (prefers-reduced-motion: reduce) {
+            transition: none;
+        }
+    }
+}
